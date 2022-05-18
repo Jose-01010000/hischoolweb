@@ -1,0 +1,83 @@
+<mat-toolbar fxLayout="row" fxLayoutGap="15px" class="sticky">
+  <button class="effect" [routerLink]="['']" mat-button>
+    <mat-icon class="ico" color="primary">school</mat-icon>
+    <span class="logo">Hi <span class="title">School</span> Web!</span>
+  </button>
+  <div fxFlex="2 1 auto" fxLayoutAlign="center center"></div>
+  <button
+    fxLayoutAlign="center center"
+    fxHide
+    fxShow.gt-sm
+    class="effect"
+    [routerLink]="['home']"
+    mat-button
+  >
+    Inicio
+  </button>
+  <button
+    fxLayoutAlign="center center"
+    fxHide
+    fxShow.gt-sm
+    class="effect"
+    [routerLink]="['about']"
+    mat-button
+  >
+    Acerca
+  </button>
+  <button
+    fxLayoutAlign="center center"
+    fxHide
+    fxShow.gt-sm
+    class="effect"
+    [routerLink]="['cursos']"
+    mat-button
+  >
+    Cursos
+  </button>
+  <button
+    fxLayoutAlign="center center"
+    fxHide
+    fxShow.gt-sm
+    class="effect"
+    [routerLink]="['']"
+    mat-button
+  >
+    instructores
+  </button>
+  <button matTooltip="Buscar" mat-icon-button>
+    <mat-icon class="effect" color="primary" aria-hidden="false"
+      >search</mat-icon
+    >
+  </button>
+  <button
+    fxLayoutAlign="center center"
+    fxHide
+    fxShow.gt-xs
+    [routerLink]="['']"
+    mat-flat-button
+    color="primary"
+    class="effect btn-style"
+  >
+    Entrar/registrarse
+  </button>
+
+  <button
+    matTooltip="Menu"
+    [matMenuTriggerFor]="menu"
+    fxLayoutAlign="center center"
+    fxShow
+    fxHide.gt-sm
+    mat-icon-button
+  >
+    <mat-icon class="effect" color="primary" aria-hidden="false">menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-template matMenuContent>
+      <button [routerLink]="['home']" mat-menu-item>Inicio</button>
+      <button [routerLink]="['about']" mat-menu-item>Acerca</button>
+      <button [routerLink]="['cursos']" mat-menu-item>Cursos</button>
+      <button [routerLink]="['']" mat-menu-item>instructores</button>
+      <button [routerLink]="['']" mat-menu-item>Entrar/registrarse</button>
+    </ng-template>
+  </mat-menu>
+</mat-toolbar>
