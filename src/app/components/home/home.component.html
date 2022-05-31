@@ -1,214 +1,51 @@
-<div fxLayout="column" fxLayoutAlign="center center">
-  <div
-    class="content"
-    fxLayout="row"
-    fxLayout.xs="column"
-    fxLayoutAlign="center center"
-    fxLayoutGap="10px"
-  >
-    <div
-      [ngStyle.xs]="{ width: 90 + '%' }"
-      [ngStyle.sm]="{ width: 100 + '%' }"
-      [ngStyle.md]="{ width: 100 + '%' }"
-      [ngStyle.lg]="{ width: 100 + '%' }"
-      [ngStyle.xl]="{ width: 100 + '%' }"
-      fxLayout="column"
-      fxLayoutAlign="center start"
-      fxLayoutGap="30px"
-    >
-      <h1 class="animated fadeIn">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nisi sunt
-        beatae sapiente illo fugiat pariatur id placeat eaque eum?
-      </h1>
-      <p class="text animated fadeIn">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit magnam
-        inventore harum quos perspiciatis nihil sint, nobis eligendi
-        voluptatibus reprehenderit!
-      </p>
-      <button
-        class="effect animated fadeIn btn-style"
-        mat-flat-button
-        color="primary"
-      >
-        Explorar los cursos
-        <mat-icon>arrow_forward</mat-icon>
-      </button>
-    </div>
-    <div
-      [ngStyle.sm]="{ width: 100 + '%' }"
-      [ngStyle.md]="{ width: 100 + '%' }"
-      [ngStyle.lg]="{ width: 100 + '%' }"
-      [ngStyle.xl]="{ width: 100 + '%' }"
-      fxHide.lt-sm
-    >
-      <img
-        class="img-home effect"
-        width="100%"
-        src="assets/img/img1.jpg"
-        alt=""
-      />
-    </div>
-  </div>
-  <div><h1>Mejores cursos</h1></div>
-  <div
-    [ngStyle.sm]="{ width: 100 + '%' }"
-    [ngStyle.md]="{ width: 100 + '%' }"
-    [ngStyle.lg]="{ width: 100 + '%' }"
-    [ngStyle.xl]="{ width: 100 + '%' }"
-    fxLayout.gt-xs="row"
-    fxLayout="column"
-    fxLayoutAlign="center center"
-    fxLayoutGap="30px"
-    class="animated fadeIn fast"
-  >
-    <mat-card fxLayout="column" fxLayoutGap="15px" class="example-card">
-      <img mat-card-image src="assets/img/img.jpg" width="100%" alt="" />
-      <mat-card-title>Nombre Curso</mat-card-title>
-      <mat-card-content>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          pariatur corporis debitis. Temporibus, voluptatum reiciendis?
-        </p>
-        <p class="text-lecciones">
-          <mat-icon
-            class="ico"
-            aria-hidden="true"
-            inline="true"
-            aria-label="Color property"
-            >school</mat-icon
-          >
-          99 lecciones
-        </p>
-      </mat-card-content>
-    </mat-card>
-    <mat-card fxLayout="column" fxLayoutGap="15px" class="example-card">
-      <img mat-card-image src="assets/img/img.jpg" width="100%" alt="" />
-      <mat-card-title>Nombre Curso</mat-card-title>
-      <mat-card-content>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          pariatur corporis debitis. Temporibus, voluptatum reiciendis?
-        </p>
-        <p class="text-lecciones">
-          <mat-icon
-            class="ico"
-            aria-hidden="true"
-            inline="true"
-            aria-label="Color property"
-            >school</mat-icon
-          >
-          99 lecciones
-        </p>
-      </mat-card-content>
-    </mat-card>
-    <mat-card fxLayout="column" fxLayoutGap="15px" class="example-card">
-      <img mat-card-image src="assets/img/img.jpg" width="100%" alt="" />
-      <mat-card-title>Nombre Curso</mat-card-title>
-      <mat-card-content>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          pariatur corporis debitis. Temporibus, voluptatum reiciendis?
-        </p>
-        <p class="text-lecciones">
-          <mat-icon
-            class="ico"
-            aria-hidden="true"
-            inline="true"
-            aria-label="Color property"
-            >school</mat-icon
-          >
-          99 lecciones
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
+<mat-drawer-container
+  [ngStyle]="{ position: drawer.opened ? 'fixed' : 'relative' }"
+  [hasBackdrop]="true"
+>
+  <mat-drawer class="sidenav-sticki" #drawer mode="push">
+    <mat-toolbar color="primary">
+      <h1 class="sidenav-menu">Menú</h1>
+    </mat-toolbar>
 
-  <footer fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
-    <div
-      class="footer"
-      fxLayout.gt-sm="row"
-      fxLayout="column"
-      fxLayoutAlign="center center"
-      fxLayoutGap="10px"
-    >
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Aplicación movil
+    <mat-nav-list id="app-nav" aria-label="Main navigation">
+      <button class="effect" mat-list-item [routerLink]="['inicio']">
+        <mat-icon mat-list-icon>home</mat-icon><span mat-line>Inicio</span>
       </button>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Comunidad
+    </mat-nav-list>
+
+    <mat-nav-list id="app-nav" aria-label="Main navigation">
+      <button class="effect" mat-list-item [routerLink]="['acerca']">
+        <mat-icon mat-list-icon>info</mat-icon><span mat-line>Acerca</span>
       </button>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Campaña
+    </mat-nav-list>
+
+    <mat-nav-list id="app-nav" aria-label="Main navigation">
+      <button class="effect" mat-list-item [routerLink]="['cursos']">
+        <mat-icon mat-list-icon>school</mat-icon><span mat-line>Cursos</span>
       </button>
-      <h1>
-        <mat-icon
-          class="ico"
-          color="primary"
-          aria-hidden="true"
-          inline="true"
-          aria-label="Color property"
-          >school</mat-icon
-        >
-        <span>Hi <span class="title">School</span> Web!</span>
-      </h1>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Ayuda
+    </mat-nav-list>
+
+    <mat-nav-list id="app-nav" aria-label="Main navigation">
+      <button class="effect" mat-list-item [routerLink]="['']">
+        <mat-icon mat-list-icon>badge</mat-icon
+        ><span mat-line>Instructores</span>
       </button>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Blog
+    </mat-nav-list>
+
+    <mat-nav-list id="app-nav" aria-label="Main navigation"
+      ><button class="effect" mat-list-item [routerLink]="['/login']">
+        <mat-icon mat-list-icon>login</mat-icon
+        ><span mat-line>Entrar/registrarse</span>
       </button>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Recursos
-      </button>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    
+    <app-navbar [drawer]="drawer"></app-navbar>
+
+    <div class="content wrapper">
+      <router-outlet></router-outlet>
     </div>
-    <div fxLayout="column" fxLayoutGap="20px">
-      <div
-        [ngStyle.sm]="{ width: 100 + '%' }"
-        [ngStyle.md]="{ width: 100 + '%' }"
-        [ngStyle.lg]="{ width: 100 + '%' }"
-        [ngStyle.xl]="{ width: 100 + '%' }"
-        fxLayout="row"
-        fxLayoutAlign="center center"
-        fxLayoutGap="20px"
-      >
-        <img src="assets/img/user.png" width="7%" alt="" />
-        <img src="assets/img/user.png" width="7%" alt="" />
-        <img src="assets/img/user.png" width="7%" alt="" />
-        <img src="assets/img/user.png" width="7%" alt="" />
-      </div>
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <p>© Hi School Web!, Inc. 2022. We love our users!❤️</p>
-      </div>
-    </div>
-  </footer>
-</div>
+  </mat-drawer-content>
+</mat-drawer-container>

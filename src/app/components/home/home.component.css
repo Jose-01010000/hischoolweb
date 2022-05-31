@@ -1,80 +1,49 @@
-h1 {
-  font-weight: bold;
-}
-
-footer {
-  width: 100%;
-  margin-top: 100px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 15px;
-}
-
-.footer {
-  width: 100%;
-  padding: 20px;
-  border-top: 5px solid #4fc3f7;
-}
-
-.footer button {
-  width: 120px;
-}
-
-.title {
-  color: #4fc3f7;
-}
-
-.text {
-  border-left: 5px solid #4fc3f7;
-  padding-left: 10px;
-}
-
-.btn-style {
-  color: white;
-  border-radius: 15px;
-}
-
-.text-lecciones {
-  color: #4fc3f7;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.ico {
-  margin-right: 10px;
-}
-
-.img-home {
-  object-fit: fill;
-}
-
-.text-cursos {
-  height: 30px;
-}
-
 .content {
-  margin: 0 20px;
+  padding-top: 80px;
 }
 
-.content > * {
-  margin: 50px;
-  /* padding: 40px; */
+.wrapper {
+  overflow: hidden;
 }
 
-.content p {
-  color: #b4bbc5;
+.sidenav-menu {
+  color: white;
 }
 
-.example-card {
-  margin: 30px;
-  padding: 20px;
-  width: 288px;
-  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-radius: 14px;
-  transition: 0.5s;
+mat-drawer-content {
+  background-color: white;
 }
 
-.example-card:hover {
-  border: 2px solid #4fc3f7;
-  cursor: pointer;
-  transform: scale(1.1);
+mat-nav-list button {
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+mat-nav-list button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #4fc3f7;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+mat-nav-list button:hover::before {
+  width: 100%;
+}
+
+mat-nav-list button:hover {
+  color: white;
+}
+
+mat-nav-list button:active:before {
+  background: #b9b9b9;
+}
+
+.sidenav-sticki{
+  position: fixed;
+  top: 0;
 }

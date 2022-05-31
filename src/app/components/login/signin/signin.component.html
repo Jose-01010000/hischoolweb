@@ -1,0 +1,80 @@
+<div
+  fxLayout
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  class="height animated fadeIn"
+  fxLayoutGap="10px"
+>
+  <h1>Iniciar sesión</h1>
+  <p class="text">
+    Hola👋, bienvenido de nuevo Inicia sesion para ingresar a tu cuenta
+  </p>
+  <mat-form-field class="input-wid" appearance="outline">
+    <mat-label>Ingresa tu correo</mat-label>
+    <input
+      [(ngModel)]="usuario.correo"
+      [formControl]="email"
+      type="email"
+      name="correo"
+      matInput
+      placeholder="alguien@ejemplo.com"
+      required
+    />
+    <mat-icon matSuffix>alternate_email</mat-icon>
+    <mat-error *ngIf="email.invalid">{{ getErrorMessageEmail() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field class="input-wid" appearance="outline">
+    <mat-label>Ingresa tu contraseña</mat-label>
+    <input
+      [(ngModel)]="usuario.contrasena"
+      [formControl]="password"
+      [type]="hide ? 'password' : 'text'"
+      #inputPass
+      name="contraseña"
+      minlength="8"
+      maxlength="30"
+      matInput
+      placeholder="Contraseña"
+      required
+    />
+    <mat-error *ngIf="password.invalid">{{ getErrorMessagePass() }}</mat-error>
+    <button
+      required
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-checkbox
+    class="input-wid"
+    color="primary"
+    [(ngModel)]="recordarme"
+    name="recordarme"
+    >Recordar usuario</mat-checkbox
+  >
+
+  <button
+    (click)="loginUsuario()"
+    class="btn-login effect"
+    mat-flat-button
+    color="primary"
+  >
+    Entrar
+  </button>
+  <div>
+    <p>
+      ¿Tienes cuenta?<a
+        class="effect"
+        mat-button
+        color="primary"
+        [routerLink]="['/login/signout']"
+        >Crea una</a
+      >
+    </p>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<!-- <div
+  class="content"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="10px"
+>
+  <div
+    [ngStyle.sm]="{ width: 100 + '%' }"
+    [ngStyle.md]="{ width: 100 + '%' }"
+    [ngStyle.lg]="{ width: 100 + '%' }"
+    [ngStyle.xl]="{ width: 100 + '%' }"
+    fxHide.lt-sm
+  >
+    <img class="img-home effect" width="100%" src="assets/img/img.jpg" alt="" />
+  </div> -->
+
+<div
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  class="content"
+>
+  <router-outlet></router-outlet>
+</div>

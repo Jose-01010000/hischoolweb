@@ -1,19 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// Componentes
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { CursosComponent } from './components/cursos/cursos.component';
+import { LoginComponent } from './components/login/login.component';
+import { Page404Component } from './components/page404/page404.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+// Rutas
+import { routes_home } from './components/home/home.routes.module';
+import { routes_login } from './components/login/login.routes.module';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'cursos', component: CursosComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'login', component: LoginComponent, children: routes_login },
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: routes_home,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  // {
+  //   path: 'dashboard',
+  //   component: DashboardComponent,
+  //   data: { expectedRole: 'admin' },
+  // },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '**', component: Page404Component }, // Redirigir a pagina de error 404
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

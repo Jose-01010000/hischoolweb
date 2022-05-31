@@ -9,7 +9,7 @@
     fxHide
     fxShow.gt-sm
     class="effect"
-    [routerLink]="['home']"
+    [routerLink]="['inicio']"
     mat-button
   >
     Inicio
@@ -19,7 +19,7 @@
     fxHide
     fxShow.gt-sm
     class="effect"
-    [routerLink]="['about']"
+    [routerLink]="['acerca']"
     mat-button
   >
     Acerca
@@ -39,7 +39,7 @@
     fxHide
     fxShow.gt-sm
     class="effect"
-    [routerLink]="['']"
+    [routerLink]="['ass']"
     mat-button
   >
     instructores
@@ -53,7 +53,7 @@
     fxLayoutAlign="center center"
     fxHide
     fxShow.gt-xs
-    [routerLink]="['']"
+    [routerLink]="['/login']"
     mat-flat-button
     color="primary"
     class="effect btn-style"
@@ -63,7 +63,7 @@
 
   <button
     matTooltip="Menu"
-    [matMenuTriggerFor]="menu"
+    (click)="drawer?.toggle()"
     fxLayoutAlign="center center"
     fxShow
     fxHide.gt-sm
@@ -71,13 +71,4 @@
   >
     <mat-icon class="effect" color="primary" aria-hidden="false">menu</mat-icon>
   </button>
-  <mat-menu #menu="matMenu">
-    <ng-template matMenuContent>
-      <button [routerLink]="['home']" mat-menu-item>Inicio</button>
-      <button [routerLink]="['about']" mat-menu-item>Acerca</button>
-      <button [routerLink]="['cursos']" mat-menu-item>Cursos</button>
-      <button [routerLink]="['']" mat-menu-item>instructores</button>
-      <button [routerLink]="['']" mat-menu-item>Entrar/registrarse</button>
-    </ng-template>
-  </mat-menu>
 </mat-toolbar>

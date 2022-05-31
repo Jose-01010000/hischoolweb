@@ -1,0 +1,36 @@
+<div
+  [ngStyle.sm]="{ width: 100 + '%' }"
+  [ngStyle.md]="{ width: 100 + '%' }"
+  [ngStyle.lg]="{ width: 100 + '%' }"
+  [ngStyle.xl]="{ width: 100 + '%' }"
+  fxLayout.gt-sm="row"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="60px"
+  class="animated fadeIn fast"
+>
+  <mat-card
+    fxLayout="column"
+    fxLayoutGap="15px"
+    class="example-card"
+    *ngFor="let item of items"
+  >
+    <img mat-card-image src="assets/img/img.jpg" width="100%" alt="" />
+    <mat-card-title>{{ item.nombre }}</mat-card-title>
+    <mat-card-content>
+      <p>
+        {{ item.Descripcion }}
+      </p>
+      <p class="text-lecciones">
+        <mat-icon
+          class="ico"
+          aria-hidden="true"
+          inline="true"
+          aria-label="Color property"
+          >school</mat-icon
+        >
+        {{ item.secciones }} secciones
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,58 @@
+h1 {
+  font-weight: bold;
+}
+
+footer {
+  width: 100%;
+  margin-top: 100px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 15px;
+}
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  border-top: 5px solid #4fc3f7;
+}
+
+.footer button {
+  width: 120px;
+}
+
+.title {
+  color: #4fc3f7;
+}
+
+.text {
+  border-left: 5px solid #4fc3f7;
+  padding-left: 10px;
+}
+
+.btn-style {
+  color: white;
+  border-radius: 10px;
+}
+
+.ico {
+  margin-right: 10px;
+}
+
+.img-home {
+  object-fit: fill;
+}
+
+.text-cursos {
+  height: 30px;
+}
+
+.content {
+  margin: 0 20px;
+}
+
+.content > * {
+  margin: 50px;
+  /* padding: 40px; */
+}
+
+.content p {
+  color: #b4bbc5;
+}
