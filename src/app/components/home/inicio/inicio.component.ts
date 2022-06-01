@@ -12,9 +12,12 @@ export class InicioComponent implements OnInit {
   constructor(private cursoService: CursosService) {}
 
   ngOnInit(): void {
-    this.cursoService.cursos().subscribe((res) => {
-      console.log(res);
-      this.cursos = res;
-    });
+    this.getCursos();
+  }
+
+  getCursos() {
+    return this.cursoService
+      .cursos()
+      .subscribe((result: any) => (this.cursos = result));
   }
 }

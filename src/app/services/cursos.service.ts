@@ -11,4 +11,8 @@ export class CursosService {
   cursos() {
     return this.http.get(`${this.url}/curso/cursos`);
   }
+
+  getAllCursos() {
+    return this.http.get(`${this.url}/curso/all-cursos`);
+  }
 }

@@ -1,0 +1,32 @@
+<div
+  class="animated fadeIn fast"
+  fxLayout="row wrap"
+  fxLayout.sm="column"
+  fxLayout.xs="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="40px grid"
+>
+  <div fxFlex="30%" *ngFor="let item of items">
+    <mat-card class="example-card">
+      <div fxLayoutAlign="center center">
+        <img class="img-tarjeta" mat-card-image [src]="item.img" alt="" />
+      </div>
+      <mat-card-title>{{ item.nombre }}</mat-card-title>
+      <mat-card-content>
+        <p>
+          {{ item.Descripcion }}
+        </p>
+        <p class="text-lecciones">
+          <mat-icon
+            class="ico"
+            aria-hidden="true"
+            inline="true"
+            aria-label="Color property"
+            >school</mat-icon
+          >
+          {{ item.secciones }} secciones
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

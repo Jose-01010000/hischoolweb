@@ -8,15 +8,11 @@ footer {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 15px;
 }
 
-.footer {
+.content {
   width: 100%;
-  padding: 20px;
-  border-top: 5px solid #4fc3f7;
+  padding-top: 20px;
 }
 
-.footer button {
-  width: 120px;
-}
 
 .title {
   color: #4fc3f7;
@@ -35,6 +31,7 @@ footer {
 .ico {
   margin-right: 10px;
 }
+
 
 .img-home {
   object-fit: fill;

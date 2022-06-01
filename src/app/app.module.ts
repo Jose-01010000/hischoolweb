@@ -32,13 +32,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { DialogComponent } from './components/shared/dialog/dialog.component';
-import { CursosComponent } from './components/shared/cursos/cursos.component';
 import { InicioComponent } from './components/home/inicio/inicio.component';
 import { AcercaComponent } from './components/home/acerca/acerca.component';
+import { CursoComponent } from './components/home/curso/curso.component';
 import { LoginComponent } from './components/login/login.component';
 import { Page404Component } from './components/page404/page404.component';
 import { SigninComponent } from './components/login/signin/signin.component';
 import { SignoutComponent } from './components/login/signout/signout.component';
+import { TarjetaCursoComponent } from './components/shared/tarjeta-curso/tarjeta-curso.component';
+import { CursousuarioComponent } from './components/dashboard/cursousuario/cursousuario.component';
 
 // Animaciones
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,6 +48,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 // Providers
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { PremiosComponent } from './components/dashboard/premios/premios.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { TarjetasPremioComponent } from './components/shared/tarjetas-premio/tarjetas-premio.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +58,6 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     HomeComponent,
     NavbarComponent,
     DialogComponent,
-    CursosComponent,
     InicioComponent,
     AcercaComponent,
     LoginComponent,
@@ -61,6 +65,12 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     SigninComponent,
     SignoutComponent,
     DashboardComponent,
+    TarjetaCursoComponent,
+    CursoComponent,
+    PremiosComponent,
+    FooterComponent,
+    CursousuarioComponent,
+    TarjetasPremioComponent,
   ],
   imports: [
     BrowserModule,

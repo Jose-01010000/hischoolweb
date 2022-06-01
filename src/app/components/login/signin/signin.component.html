@@ -9,6 +9,7 @@
   <p class="text">
     Hola👋, bienvenido de nuevo Inicia sesion para ingresar a tu cuenta
   </p>
+
   <mat-form-field class="input-wid" appearance="outline">
     <mat-label>Ingresa tu correo</mat-label>
     <input
@@ -23,6 +24,7 @@
     <mat-icon matSuffix>alternate_email</mat-icon>
     <mat-error *ngIf="email.invalid">{{ getErrorMessageEmail() }}</mat-error>
   </mat-form-field>
+
   <mat-form-field class="input-wid" appearance="outline">
     <mat-label>Ingresa tu contraseña</mat-label>
     <input
@@ -32,7 +34,7 @@
       #inputPass
       name="contraseña"
       minlength="8"
-      maxlength="30"
+      maxlength="40"
       matInput
       placeholder="Contraseña"
       required
@@ -72,7 +74,7 @@
         class="effect"
         mat-button
         color="primary"
-        [routerLink]="['/login/signout']"
+        [routerLink]="['/login/register']"
         >Crea una</a
       >
     </p>

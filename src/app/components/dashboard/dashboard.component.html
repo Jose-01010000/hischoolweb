@@ -1,1 +1,145 @@
-<p>dashboard works!</p>
+<mat-toolbar
+  class="mat-elevation-z6"
+  fxLayout="row"
+  fxLayoutGap="50px"
+  class="sticky"
+>
+  <button class="effect" [routerLink]="['']" mat-button>
+    <mat-icon class="ico" color="primary">school</mat-icon>
+    <span class="logo">Hi <span class="title">School</span> Web!</span>
+  </button>
+  <div fxFlex="2 1 auto" fxLayoutAlign="center center"></div>
+
+  <div fxHide fxShow.gt-sm fxLayout="row" fxLayoutAlign="center center">
+    <mat-icon class="ico" color="primary">stars</mat-icon>
+    <span class="puntos">{{ 33333 | number }}</span>
+  </div>
+
+  <div
+    fxHide
+    fxShow.gt-sm
+    fxLayout="row"
+    fxLayoutGap="20px"
+    fxLayoutAlign="center center"
+  >
+    <div fxLayout="column" fxLayoutAlign="center end">
+      <h4 class="nombre">{{ tokenDecode.nombre }}</h4>
+      <p class="id-user">ID: {{ tokenDecode.id_usuario }}</p>
+    </div>
+    <img src="assets/img/user.png" width="40px" alt="" />
+  </div>
+
+  <button
+    matTooltip="Menu"
+    (click)="drawer?.toggle()"
+    fxLayoutAlign="center center"
+    mat-icon-button
+    fxShow
+    fxHide.gt-sm
+  >
+    <mat-icon class="effect" color="primary" aria-hidden="false">menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container
+  [ngStyle]="{ position: drawer.opened ? 'fixed' : 'relative' }"
+  [hasBackdrop]="true"
+>
+  <mat-drawer class="sidenav-sticki" #drawer mode="over">
+    <mat-toolbar color="primary">
+      <h1 class="sidenav-menu">Menú</h1>
+    </mat-toolbar>
+
+    <mat-nav-list id="app-nav" aria-label="Main navigation"
+      ><button class="effect" mat-list-item [routerLink]="['']">
+        <mat-icon mat-list-icon>home</mat-icon><span mat-line>Inicio</span>
+      </button>
+    </mat-nav-list>
+
+    <mat-nav-list id="app-nav" aria-label="Main navigation"
+      ><button
+        class="effect btn-sidenav"
+        mat-list-item
+        [routerLink]="['/dashboard/curso-usuario']"
+      >
+        <mat-icon mat-list-icon>school</mat-icon><span mat-line>Cursos</span>
+      </button>
+    </mat-nav-list>
+
+    <mat-nav-list id="app-nav" aria-label="Main navigation"
+      ><button
+        class="effect"
+        mat-list-item
+        [routerLink]="['/dashboard/premios']"
+      >
+        <mat-icon mat-list-icon>redeem</mat-icon><span mat-line>Premios</span>
+      </button>
+    </mat-nav-list>
+
+    <mat-nav-list id="app-nav" aria-label="Main navigation"
+      ><button class="effect" mat-list-item (click)="salir()">
+        <mat-icon mat-list-icon>exit_to_app</mat-icon
+        ><span mat-line>Salir</span>
+      </button>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="wrapper">
+      <div class="wrapperr">
+        <div
+          class="sidebar"
+          fxLayout="column"
+          fxLayoutGap="10px"
+          fxLayoutAlign="center center"
+          fxHide
+          fxShow.gt-sm
+        >
+          <mat-nav-list id="app-nav" aria-label="Main navigation"
+            ><button class="effect" mat-list-item [routerLink]="['']">
+              <mat-icon mat-list-icon>home</mat-icon
+              ><span mat-line>Inicio</span>
+            </button>
+          </mat-nav-list>
+
+          <mat-nav-list id="app-nav" aria-label="Main navigation"
+            ><button
+              class="effect btn-sidenav"
+              mat-list-item
+              [routerLink]="['/dashboard/curso-usuario']"
+            >
+              <mat-icon mat-list-icon>school</mat-icon
+              ><span mat-line>Cursos</span>
+            </button>
+          </mat-nav-list>
+
+          <mat-nav-list id="app-nav" aria-label="Main navigation"
+            ><button
+              class="effect"
+              mat-list-item
+              [routerLink]="['/dashboard/premios']"
+            >
+              <mat-icon mat-list-icon>redeem</mat-icon
+              ><span mat-line>Premios</span>
+            </button>
+          </mat-nav-list>
+
+          <mat-nav-list id="app-nav" aria-label="Main navigation"
+            ><button class="effect" (click)="salir()" mat-list-item>
+              <mat-icon mat-list-icon>exit_to_app</mat-icon
+              ><span mat-line>Salir</span>
+            </button>
+          </mat-nav-list>
+        </div>
+      </div>
+      <div
+        [ngStyle.sm]="{ left: 0 + 'px' }"
+        [ngStyle.xs]="{ left: 0 + 'px' }"
+        class="main"
+        fxLayoutAlign="center center"
+      >
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

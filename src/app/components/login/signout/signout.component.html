@@ -31,9 +31,12 @@
         name="nombre"
         required
         matInput
+        type="text"
         placeholder="Nombre"
+        [formControl]="nombre"
       />
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-error *ngIf="email.invalid">{{ getErrorMessageNombre() }}</mat-error>
     </mat-form-field>
 
     <mat-form-field fxFlex="47" appearance="outline">
@@ -41,11 +44,16 @@
       <input
         [(ngModel)]="usuario.apellido"
         name="apellido"
+        type="text"
         required
         matInput
         placeholder="Apellido"
+        [formControl]="apellido"
       />
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-error *ngIf="email.invalid">{{
+        getErrorMessageApellido()
+      }}</mat-error>
     </mat-form-field>
   </div>
   <!-- <mat-form-field class="input-wid" hintLabel="Maximo 15 caracteres" appearance="outline">
@@ -78,13 +86,13 @@
       [type]="hide ? 'password' : 'text'"
       #inputPass
       minlength="8"
-      maxlength="30"
+      maxlength="40"
       matInput
       placeholder="Contraseña"
       required
     />
     <mat-error *ngIf="password.invalid">{{ getErrorMessagePass() }}</mat-error>
-    <mat-hint align="end">{{ inputPass.value?.length || 0 }}/30</mat-hint>
+    <mat-hint align="end">{{ inputPass.value?.length || 0 }}/40</mat-hint>
     <button
       mat-icon-button
       matSuffix

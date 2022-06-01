@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  padding: 20px;
+  border-top: 5px solid #4fc3f7;
+}
+
+.footer button {
+  width: 120px;
+}
+
+.title {
+  color: #4fc3f7;
+}
+
+.text {
+  border-left: 5px solid #4fc3f7;
+  padding-left: 10px;
+}

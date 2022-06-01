@@ -1,0 +1,20 @@
+<div
+  [ngStyle.sm]="{ width: 100 + '%' }"
+  [ngStyle.md]="{ width: 100 + '%' }"
+  [ngStyle.lg]="{ width: 100 + '%' }"
+  [ngStyle.xl]="{ width: 100 + '%' }"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="60px"
+  class="animated fadeIn fast"
+>
+  <div class="curso-info">
+    
+  </div>
+
+  <app-tarjeta-curso [items]="cursos"></app-tarjeta-curso>
+
+  <div class="content">
+    <app-footer></app-footer>
+  </div>
+</div>

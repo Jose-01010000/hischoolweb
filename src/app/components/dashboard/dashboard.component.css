@@ -1,0 +1,127 @@
+.wrapper {
+  overflow: hidden;
+}
+
+.wrapperr {
+  display: flex;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapperr .sidebar {
+  width: 200px;
+  height: 100%;
+  background: #4fc3f7;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.wrapperr .sidebar mat-nav-list {
+  width: 100%;
+}
+
+/* .wrapperr .sidebar ul li a .fas {
+  width: 25px;
+} */
+
+.main {
+  position: relative;
+  margin: 30px;
+  width: calc(100% - 200px);
+  height: 100%;
+  left: 200px;
+  top: 63px;
+  min-height: 100vh;
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 10;
+}
+
+.logo {
+  padding: 0 5px;
+  font-size: 20px;
+  font-family: "Lobster", cursive;
+}
+
+.title {
+  color: #4fc3f7;
+}
+
+.input-wid {
+  background-color: white;
+}
+
+.ico {
+  margin-right: 10px;
+}
+
+.puntos {
+  font-weight: bold;
+  color: #4fc3f7;
+}
+
+.nombre {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.id-user {
+  font-weight: bold;
+  font-size: 12px;
+  color: #b4bbc5;
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav-menu {
+  color: white;
+}
+
+mat-drawer-content {
+  background-color: white;
+}
+
+mat-nav-list button {
+  transition: all 0.5s;
+  color: #fff;
+  z-index: 1;
+}
+
+mat-nav-list button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+mat-nav-list button:hover::before {
+  width: 100%;
+}
+
+mat-nav-list button:hover {
+  color: #000;
+}
+
+mat-nav-list button:active:before {
+  background: #b9b9b9;
+}
+
+.sidenav-sticki {
+  position: fixed;
+  top: 0;
+  background-color: #4fc3f7;
+}

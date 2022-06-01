@@ -4,6 +4,6 @@ import { SignoutComponent } from './signout/signout.component';
 
 export const routes_login: Routes = [
   { path: 'signin', component: SigninComponent },
-  { path: 'signout', component: SignoutComponent },
+  { path: 'register', component: SignoutComponent },
   { path: '**', redirectTo: 'signin', pathMatch: 'full' },
 ];

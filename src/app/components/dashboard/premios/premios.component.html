@@ -1,0 +1,14 @@
+<div
+  [ngStyle.sm]="{ width: 100 + '%' }"
+  [ngStyle.md]="{ width: 100 + '%' }"
+  [ngStyle.lg]="{ width: 100 + '%' }"
+  [ngStyle.xl]="{ width: 100 + '%' }"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="60px"
+  class="animated fadeIn fast"
+>
+  <div class="content">
+    <app-tarjetas-premio [items]="premios"></app-tarjetas-premio>
+  </div>
+</div>

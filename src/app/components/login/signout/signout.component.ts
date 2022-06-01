@@ -23,6 +23,8 @@ export class SignoutComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
   facheNacimiento = new FormControl('', [Validators.required]);
+  nombre = new FormControl('', [Validators.required]);
+  apellido = new FormControl('', [Validators.required]);
 
   constructor(
     private router: Router,
@@ -59,6 +61,16 @@ export class SignoutComponent implements OnInit {
     });
   }
 
+  // Obtener mensajes de error de los inputs del formulario --> Input text nombre
+  getErrorMessageNombre() {
+    return this.nombre.hasError('required') ? 'Ingresa tu nombre' : '';
+  }
+
+  // Obtener mensajes de error de los inputs del formulario --> Input text apellido
+  getErrorMessageApellido() {
+    return this.apellido.hasError('required') ? 'Ingresa tu apellido' : '';
+  }
+
   // Obtener mensajes de error de los inputs del formulario --> Input email
   getErrorMessageEmail() {
     if (this.email.hasError('required')) {
@@ -78,15 +90,13 @@ export class SignoutComponent implements OnInit {
       return 'Contraseña debe contener 8 caracteres';
     }
 
-    return this.email.hasError('password') ? 'contraseña invalida' : '';
+    return this.password.hasError('password') ? 'contraseña invalida' : '';
   }
 
   // Obtener mensajes de error de los inputs del formulario --> Input date picker
   getErrorMessageFecha() {
-    if (this.facheNacimiento.hasError('required')) {
-      return 'Debes ingresar fecha de nacimiento';
-    }
-
-    return this.email.hasError('password') ? 'contraseña invalida' : '';
+    return this.facheNacimiento.hasError('required')
+      ? 'Debes ingresar fecha de nacimiento'
+      : '';
   }
 }

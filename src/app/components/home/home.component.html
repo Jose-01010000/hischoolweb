@@ -2,7 +2,7 @@
   [ngStyle]="{ position: drawer.opened ? 'fixed' : 'relative' }"
   [hasBackdrop]="true"
 >
-  <mat-drawer class="sidenav-sticki" #drawer mode="push">
+  <mat-drawer class="sidenav-sticki" #drawer mode="over">
     <mat-toolbar color="primary">
       <h1 class="sidenav-menu">Menú</h1>
     </mat-toolbar>
@@ -25,12 +25,12 @@
       </button>
     </mat-nav-list>
 
-    <mat-nav-list id="app-nav" aria-label="Main navigation">
+    <!-- <mat-nav-list id="app-nav" aria-label="Main navigation">
       <button class="effect" mat-list-item [routerLink]="['']">
         <mat-icon mat-list-icon>badge</mat-icon
         ><span mat-line>Instructores</span>
       </button>
-    </mat-nav-list>
+    </mat-nav-list> -->
 
     <mat-nav-list id="app-nav" aria-label="Main navigation"
       ><button class="effect" mat-list-item [routerLink]="['/login']">
@@ -41,7 +41,6 @@
   </mat-drawer>
 
   <mat-drawer-content>
-    
     <app-navbar [drawer]="drawer"></app-navbar>
 
     <div class="content wrapper">

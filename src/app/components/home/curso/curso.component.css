@@ -1,0 +1,13 @@
+.curso-info {
+  /* background-image: src("assets/img/img1.jpg"); */
+  background-image: url("../../../../assets/img/imgcurso.jpg");
+  border-radius: 10px;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  width: 90%;
+  height: 300px;
+}
+
+.content {
+  width: 100%;
+}

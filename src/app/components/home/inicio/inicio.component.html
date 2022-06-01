@@ -17,18 +17,18 @@
       fxLayoutGap="30px"
     >
       <h1 class="animated fadeIn">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nisi sunt
-        beatae sapiente illo fugiat pariatur id placeat eaque eum?
+        Bienvenido a Hi School Web! aplicación desarrollada con el fin de
+        brindar actividades interactivas para los niños.
       </h1>
       <p class="text animated fadeIn">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit magnam
-        inventore harum quos perspiciatis nihil sint, nobis eligendi
-        voluptatibus reprehenderit!
+        Amplio programa analitico con diferentes actividades de 1.ᵉʳ grado a 6.º
+        grado, empieza ahora y consigue divertidas recompensas
       </p>
       <button
         class="effect animated fadeIn btn-style"
         mat-flat-button
         color="primary"
+        [routerLink]="['/home/cursos']"
       >
         Explorar los cursos
         <mat-icon>arrow_forward</mat-icon>
@@ -51,94 +51,11 @@
   </div>
   <div><h1>Algunos de nuestros cursos</h1></div>
 
-  <app-cursos [items]="cursos"></app-cursos>
+  <div class="content">
+    <app-tarjeta-curso [items]="cursos"></app-tarjeta-curso>
+  </div>
 
-  <footer fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
-    <div
-      class="footer"
-      fxLayout.gt-sm="row"
-      fxLayout="column"
-      fxLayoutAlign="center center"
-      fxLayoutGap="10px"
-    >
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Aplicación movil
-      </button>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Comunidad
-      </button>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Campaña
-      </button>
-      <h1>
-        <mat-icon
-          class="ico"
-          color="primary"
-          aria-hidden="true"
-          inline="true"
-          aria-label="Color property"
-          >school</mat-icon
-        >
-        <span>Hi <span class="title">School</span> Web!</span>
-      </h1>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Ayuda
-      </button>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Blog
-      </button>
-      <button
-        fxLayoutAlign="center center"
-        class="effect"
-        [routerLink]="['']"
-        mat-button
-      >
-        Recursos
-      </button>
-    </div>
-    <div fxLayout="column" fxLayoutGap="20px">
-      <div
-        [ngStyle.sm]="{ width: 100 + '%' }"
-        [ngStyle.md]="{ width: 100 + '%' }"
-        [ngStyle.lg]="{ width: 100 + '%' }"
-        [ngStyle.xl]="{ width: 100 + '%' }"
-        fxLayout="row"
-        fxLayoutAlign="center center"
-        fxLayoutGap="20px"
-      >
-        <img src="assets/img/user.png" width="7%" alt="" />
-        <img src="assets/img/user.png" width="7%" alt="" />
-        <img src="assets/img/user.png" width="7%" alt="" />
-        <img src="assets/img/user.png" width="7%" alt="" />
-      </div>
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <p>© Hi School Web!, Inc. 2022. We love our users!❤️</p>
-      </div>
-    </div>
-  </footer>
+  <div class="content">
+    <app-footer></app-footer>
+  </div>
 </div>
